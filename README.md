@@ -1,7 +1,4 @@
 # Method_and_Metrics_ML
-This is a development for the management of information related to quantitative and qualitative data, which allows the development of supervised or unsupervised information.
-
-# Method_and_Metrics_ML
 
 This repository contains a collection of common methods and metrics used in the field of machine learning, along with their implementation in Python.
 
