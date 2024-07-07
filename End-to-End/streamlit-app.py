@@ -1,3 +1,4 @@
+import os
 import shap
 import pandas as pd
 import numpy as np
@@ -7,9 +8,10 @@ from pyarrow import parquet as pq
 from catboost import CatBoostClassifier, Pool
 import joblib
 
+
 # Path of the trained model and data
-MODEL_PATH = "../model/cat_model.cbm" 
-DATA_PATH = "../data/churn_data_regulated.parquet"
+MODEL_PATH = "model/catboost_model.cbm" 
+DATA_PATH = "data/churn_data_regulated.parquet"
 
 st.set_page_config(page_title="Churn Project")
 
@@ -76,15 +78,14 @@ def plot_shap(model, data, customer_id, X_train, X_test):
     display_shap_waterfall_plot(explainer, explainer.expected_value, shap_values_cat_test[customer_index], feature_names=X_test.columns, max_display=20)
 
 st.title("Telco Customer Churn Project")
-
 def main():
     model = load_model()
     data = load_data()
-
-    X_train = load_x_y("../data/X_train.pkl")
-    X_test = load_x_y("../data/X_test.pkl")
-    y_train = load_x_y("../data/y_train.pkl")
-    y_test = load_x_y("../data/y_test.pkl")
+    
+    X_train = load_x_y("data/X_train.pkl")
+    X_test = load_x_y("data/X_test.pkl")
+    y_train = load_x_y("data/y_train.pkl")
+    y_test = load_x_y("data/y_test.pkl")
 
     max_tenure = data['tenure'].max()
     max_monthly_charges = data['MonthlyCharges'].max()
