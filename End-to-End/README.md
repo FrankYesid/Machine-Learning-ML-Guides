@@ -92,3 +92,38 @@ Este proyecto es una solución de extremo a extremo (End-to-End) en Python. El p
 
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
+
+# Project Update: Churn Prediction
+
+## Project Description:
+
+This project is a complete implementation of a churn prediction system using machine learning techniques. The goal is to predict whether a customer will stop using a service based on historical data and customer features.
+
+## Changes in this Update:
+
+Exploratory Data Analysis (EDA): Added scripts for data cleaning and visualization.
+Feature Engineering: Implemented new techniques for feature creation from raw data.
+Modeling: Integrated multiple machine learning models including Random Forest, Gradient Boosting, and XGBoost.
+Model Evaluation: Added detailed evaluation metrics to compare model performance.
+Deployment: Provided scripts and configurations to deploy the model in a production environment.
+Instructions:
+
+Install Dependencies:
+
+Copiar código
+pip install -r requirements.txt
+Run the Training Script:
+
+Copiar código
+python train_model.py
+Evaluate the Model:
+
+Copiar código
+python evaluate_model.py
+Next Steps:
+
+Improve model accuracy through hyperparameter tuning.
+Implement advanced feature engineering techniques.
+Develop a user interface to facilitate real-time churn prediction.
+This summary provides an overview of the improvements and updates made to the project, as well as clear instructions for other developers to replicate the work and contribute.
+
