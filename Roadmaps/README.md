@@ -5,7 +5,7 @@ In this repository you will find different roadmaps for different topics, includ
 ## Machine Learning Roadmap
 This roadmap is divided into different sections covering the basics of Machine Learning, including supervised and unsupervised learning algorithms, neural networks, natural language processing, among others.
 
-- [Introduction to Machine Learning](Machine_Learning/introduction.md)
+- [Introduction to Machine Learning](Machine_Learning/Introduction.md)
 - [Supervised Learning Algorithms](Machine_Learning/supervised_learning.md)
 - [Unsupervised Learning Algorithms](Machine_Learning/unsupervised_learning.md)
 - [Neural Networks](Machine_Learning/neural_networks.md)
