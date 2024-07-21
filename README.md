@@ -1,20 +1,31 @@
-# Method_and_Metrics_ML
+# Machine Learning Projects
 
-This repository contains a collection of common methods and metrics used in the field of machine learning, along with their implementation in Python.
+This repository contains a collection of machine learning projects organized into different thematic areas.
 
 ## Repository Description
 
-The main goal of this repository is to provide a centralized reference for various machine learning methods and associated metrics for evaluating model performance.
+The main goal of this repository is to provide a centralized reference for various machine learning methods and applications.
 
-## Folder and File Structure
+## Folder Structure
 
-- `/methods`: Contains implementations of different machine learning algorithms such as linear regression, decision tree classification, etc.
-- `/metrics`: Includes code for calculating model evaluation metrics such as accuracy, recall, F1-score, etc.
-- `README.md`: This file provides an overview of the repository and how to use it.
+- [**Anomalies**](Anomalies/anomalies.md): Projects related to anomaly detection.
+- **Basico**: Implementations of basic machine learning algorithms.
+- **Classification**: Algorithms and examples of classification.
+- **Cluster**: Clustering and cluster analysis projects.
+- **Dashboard**: Dashboards and data visualization tools.
+- **Dimensionality Reduction**: Dimensionality reduction techniques.
+- **Docker**: Docker configuration files.
+- **End-to-End**: Complete end-to-end machine learning projects.
+- **Lector OCR**: Projects related to optical character recognition.
+- **Roadmaps**: Roadmaps and study plans for learning machine learning.
+- **Shap**: Projects and examples using SHAP for model interpretability.
+- **Test**: Testing scripts and tools.
+- **Visualization**: Data visualization tools and examples.
+- **WebScraping**: Web scraping projects for data collection.
 
 ## Documentation
 
-In each folder (`/methods` and `/metrics`), you'll find additional README files that explain each method and metric in detail, along with usage examples and additional references.
+Each folder contains additional README files that explain each method and project in detail, along with usage examples and additional references.
 
 ## Source Code
 
@@ -31,9 +42,5 @@ To run the code in this repository, you'll need to have the following Python lib
 You can install these dependencies by running:
 
 ```bash
-pip install numpy scikit-learn pandas
-
-
-Additional Resources
-Link to Machine Learning Book
-Public Dataset for Experimentation
+# !pip install numpy pandas matplotlib tensorflow torch catboost scikit-learn shap streamlit sweetviz
+# !pip install pandas==1.3.5
