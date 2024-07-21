@@ -7,9 +7,10 @@ from catboost import CatBoostClassifier
 MODEL_PATH = "model/catboost_model.cbm" 
 
 # Function to load the trained model
-def load_model():
-    model = CatBoostClassifier()
-    model.load_model(MODEL_PATH)
+def load_model():  
+    model = CatBoostClassifier()  
+    model.load_model(MODEL_PATH)  
+    print("Modelo cargado correctamente!") # ¡Nuevo mensaje para confirmar la carga!  
     return model
 
 # Function to predict churn probability from data in DataFrame format
@@ -31,7 +32,7 @@ def index():
     return {'message': 'CHURN Prediction API'}
 
 # Define the API endpoint
-@app.post('predict/')
+@app.post('/predict/')
 def predict_churn(data: dict):
     # Get the prediction
     churn_probability = get_churn_probability(data, model)

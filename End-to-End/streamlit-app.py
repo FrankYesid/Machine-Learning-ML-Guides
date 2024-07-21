@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 from pyarrow import parquet as pq
 from catboost import CatBoostClassifier, Pool
 import joblib
-
+import requests
 
 # Path of the trained model and data
 MODEL_PATH = "model/catboost_model.cbm" 
