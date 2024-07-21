@@ -17,7 +17,14 @@ st.set_page_config(page_title="Churn Project")
 
 @st.cache_resource
 def load_data():
-    data = pd.read_parquet(DATA_PATH)
+    try:
+        data = pd.read_parquet(DATA_PATH)
+    except FileNotFoundError:
+        st.error("Data file not found.")
+        return None
+    except Exception as e:
+        st.error(f"An error occurred while loading data: {e}")
+        return None
     return data
 
 def load_x_y(file_path):
@@ -27,7 +34,14 @@ def load_x_y(file_path):
 
 def load_model():
     model = CatBoostClassifier()
-    model.load_model(MODEL_PATH)
+    try:
+        model.load_model(MODEL_PATH)
+    except FileNotFoundError:
+        st.error("Model file not found.")
+        return None
+    except Exception as e:
+        st.error(f"An error occurred while loading the model: {e}")
+        return None
     return model
 
 def calculate_shap(model, X_train, X_test):
@@ -47,10 +61,11 @@ def plot_shap_values(model, explainer, shap_values_cat_train, shap_values_cat_te
 
 def display_shap_summary(shap_values_cat_train, X_train):
     # Create the plot summarizing the SHAP values
-    shap.summary_plot(shap_values_cat_train, X_train, plot_type="bar", plot_size=(12,12))
-    summary_fig, _ = plt.gcf(), plt.gca()
-    st.pyplot(summary_fig)
+    fig, ax = plt.subplots(figsize=(12, 8))
+    shap.summary_plot(shap_values_cat_train, X_train, plot_type="bar", show=False)
+    st.pyplot(fig)
     plt.close()
+
 
 def display_shap_waterfall_plot(explainer, expected_value, shap_values, feature_names, max_display=20):
     # Create SHAP waterfall drawing
@@ -162,15 +177,38 @@ def main():
                 "TotalCharges": [total_charges]
             })
 
-            # Predict churn probability using the model
+            # Send the POST request to the FastAPI API
+            response =  requests.post("http://127.0.0.1:8000/predict/", json=new_customer_data.to_dict()) #requests.post("http://127.0.0.1:5000/predict/", json=new_customer_data.to_dict())
+            # print(pd.DataFrame([new_customer_data]))
+            print(new_customer_data.to_dict())
+            # print(pd.DataFrame([new_customer_data.to_dict()]))
+
+            # # Get the response from the FastAPI endpoint
+            # churn_probability = response.json()["Churn Probability"]
+
+            # # Predict churn probability using the model
             churn_probability = model.predict_proba(new_customer_data)[:, 1]
 
             # Format churn probability
             formatted_churn_probability = "{:.2%}".format(churn_probability.item())
 
             big_text = f"<h1>Churn Probability: {formatted_churn_probability}</h1>"
+            
             st.markdown(big_text, unsafe_allow_html=True)
             st.write(new_customer_data.to_dict())
+
+            if response.status_code == 600:
+                # Get the churn probability from the response
+                # churn_probability = response.json()["Churn Probability"]
+
+                # Format churn probability
+                formatted_churn_probability = "{:.2%}".format(churn_probability)
+
+                # big_text = f"<h1>Churn Probability: {formatted_churn_probability}</h1>"
+                # st.markdown(big_text, unsafe_allow_html=True)
+                # st.write(new_customer_data.to_dict())
+            else:
+                st.write("Error: Unable to connect to the FastAPI server.")
 
 if __name__ == "__main__":
     main()
