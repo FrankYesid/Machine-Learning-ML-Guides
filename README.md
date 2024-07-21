@@ -42,5 +42,5 @@ To run the code in this repository, you'll need to have the following Python lib
 You can install these dependencies by running:
 
 ```bash
-# !pip install numpy pandas matplotlib tensorflow torch catboost scikit-learn shap streamlit sweetviz
-# !pip install pandas==1.3.5
+!pip install numpy pandas matplotlib tensorflow torch catboost scikit-learn shap streamlit sweetviz
+!pip install pandas==1.3.5
