@@ -10,9 +10,9 @@ The main goal of this repository is to provide a centralized reference for vario
 
 - [**Anomalies**](Anomalies/anomalies.md): Projects related to anomaly detection.
 - [**Basico**](Basico/basic.md): Implementations of basic machine learning algorithms.
-- **Classification**: Algorithms and examples of classification.
-- **Cluster**: Clustering and cluster analysis projects.
-- **Dashboard**: Dashboards and data visualization tools.
+- [**Classification**](Classification/classification.md): Algorithms and examples of classification.
+- [**Cluster**](cluster/cluster.md): Clustering and cluster analysis projects.
+- [**Dashboard**](Dashboard/dash.md): Dashboards and data visualization tools.
 - **Dimensionality Reduction**: Dimensionality reduction techniques.
 - **Docker**: Docker configuration files.
 - **End-to-End**: Complete end-to-end machine learning projects.
