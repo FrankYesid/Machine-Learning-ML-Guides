@@ -9,7 +9,7 @@ The main goal of this repository is to provide a centralized reference for vario
 ## Folder Structure
 
 - [**Anomalies**](Anomalies/anomalies.md): Projects related to anomaly detection.
-- **Basico**: Implementations of basic machine learning algorithms.
+- [**Basico**](Basico/basic.md): Implementations of basic machine learning algorithms.
 - **Classification**: Algorithms and examples of classification.
 - **Cluster**: Clustering and cluster analysis projects.
 - **Dashboard**: Dashboards and data visualization tools.
