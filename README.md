@@ -13,7 +13,7 @@ The main goal of this repository is to provide a centralized reference for vario
 - [**Classification**](Classification/classification.md): Algorithms and examples of classification.
 - [**Cluster**](cluster/cluster.md): Clustering and cluster analysis projects.
 - [**Dashboard**](Dashboard/dash.md): Dashboards and data visualization tools.
-- [**Dimensionality Reduction**](Dimensionality Reduction/reduction.md): Dimensionality reduction techniques.
+- [**Dimensionality Reduction**](Dimensionality_Reduction/reduction.md): Dimensionality reduction techniques.
 - [**Docker**](Docker/docker.md): Docker configuration files.
 - [**End-to-End**](End-to-End/EndtoEnd.md): Complete end-to-end machine learning projects.
 - [**Lector OCR**](Lector OCR/ocr.md): Projects related to optical character recognition.
