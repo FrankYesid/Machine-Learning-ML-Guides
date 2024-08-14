@@ -18,9 +18,9 @@ The main goal of this repository is to provide a centralized reference for vario
 - [**End-to-End**](End-to-End/EndtoEnd.md): Complete end-to-end machine learning projects.
 - [**Lector OCR**](Lector OCR/ocr.md): Projects related to optical character recognition.
 - [**Roadmaps**](Roadmaps/README.md): Roadmaps and study plans for learning machine learning.
-- **Shap**: Projects and examples using SHAP for model interpretability.
-- **Test**: Testing scripts and tools.
-- **Visualization**: Data visualization tools and examples.
+- [**Shap**]: Projects and examples using SHAP for model interpretability.
+- [**Test**]: Testing scripts and tools.
+- [**Visualization**]: Data visualization tools and examples.
 - [**WebScraping**](WebScraping/WebScraping.md): Web scraping projects for data collection.
 
 ## Documentation
