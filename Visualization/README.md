@@ -9,7 +9,7 @@ The Visualization section focuses on different techniques and libraries used to 
 
 ## Contents
 
-- **`data/`**: Example datasets used for creating visualizations.
+- [**`data/`**]: Example datasets used for creating visualizations.
 - **`notebooks/`**: Jupyter notebooks with visualization examples and tutorials.
 - **`scripts/`**: Python scripts that generate various types of visualizations.
 - **`images/`**: Saved images of visualizations created using different techniques.
