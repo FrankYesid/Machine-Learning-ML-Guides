@@ -1,4 +1,3 @@
-```markdown
 # Notebooks
 
 This directory contains Jupyter notebooks used for exploring data, developing models, and illustrating concepts in machine learning.

@@ -1,4 +1,3 @@
-```markdown
 # Images
 
 This directory contains image files used for visualization, documentation, and illustration purposes within the various projects.

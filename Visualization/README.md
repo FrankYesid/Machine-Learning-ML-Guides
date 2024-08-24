@@ -1,4 +1,3 @@
-```markdown
 # Visualization
 
 This directory contains various projects and scripts for visualizing data and model results in machine learning. Effective data visualization is crucial for understanding data distributions, identifying patterns, and communicating insights.

@@ -1,4 +1,3 @@
-```markdown
 # Data
 
 This directory contains datasets used in various machine learning projects within this repository.
