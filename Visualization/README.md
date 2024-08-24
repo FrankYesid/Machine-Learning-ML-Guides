@@ -1,5 +1,3 @@
-Aquí tienes un README.md para la sección de "Visualization", centrado en diferentes formas de visualizar gráficos en proyectos de machine learning:
-
 ```markdown
 # Visualization
 
