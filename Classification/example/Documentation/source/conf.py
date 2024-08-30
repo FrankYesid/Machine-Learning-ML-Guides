@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'classification'
-copyright = '2024, Frank Yesid Zapata C.'
-author = 'Frank Yesid Zapata C.'
+project = 'Classification'
+copyright = '2024, Frank Yesid Zapata C'
+author = 'Frank Yesid Zapata C'
 
 # The full version, including alpha/beta/rc tags
 release = 'Machine Learning'

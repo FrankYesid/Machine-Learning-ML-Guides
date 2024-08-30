@@ -43,9 +43,9 @@ def train_model(X_train, y_train):
     """
     Entrena un modelo de clasificación usando RandomForest.
     
-    :param X_train: Características del conjunto de entrenamiento.
-    :param y_train: Variable objetivo del conjunto de entrenamiento.
-    :return: Modelo entrenado.
+    X_train: Características del conjunto de entrenamiento.
+    y_train: Variable objetivo del conjunto de entrenamiento.
+    return: Modelo entrenado.
     """
     model = RandomForestClassifier(random_state=42)
     model.fit(X_train, y_train)
@@ -55,10 +55,10 @@ def evaluate_model(model, X_test, y_test):
     """
     Evalúa el modelo utilizando el conjunto de prueba.
     
-    :param model: Modelo entrenado.
-    :param X_test: Características del conjunto de prueba.
-    :param y_test: Variable objetivo del conjunto de prueba.
-    :return: Precisión y reporte de clasificación.
+    model: Modelo entrenado.
+    X_test: Características del conjunto de prueba.
+    y_test: Variable objetivo del conjunto de prueba.
+    return: Precisión y reporte de clasificación.
     """
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
@@ -69,9 +69,9 @@ def classify_new_data(model, new_data):
     """
     Clasifica nuevos datos utilizando el modelo entrenado.
     
-    :param model: Modelo entrenado.
-    :param new_data: Nuevos datos a clasificar.
-    :return: Predicciones para los nuevos datos.
+    model: Modelo entrenado.
+    new_data: Nuevos datos a clasificar.
+    return: Predicciones para los nuevos datos.
     """
     predictions = model.predict(new_data)
     return predictions
