@@ -4,6 +4,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import pandas as pd
 
+
+# Pendiente agregar verificador de función
 def load_data(file_path):
     """
     Carga un archivo de datos en formato CSV.
