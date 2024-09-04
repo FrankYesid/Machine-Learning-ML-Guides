@@ -1,6 +1,3 @@
-Claro, aquí tienes un ejemplo detallado para el archivo `classification.md` dentro de la carpeta "Classification":
-
----
 
 # Classification
 
@@ -107,11 +104,3 @@ For more detailed explanations and theoretical background, you can refer to the 
 ## Contributing
 
 Contributions are welcome! If you have any improvements or new projects to add, please submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Este archivo proporciona una visión detallada de los proyectos de clasificación, incluidos los scripts de ejemplo, instrucciones de uso y dependencias necesarias.
