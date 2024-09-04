@@ -1,111 +1,27 @@
-# Classification
+# Results
 
-## Overview
+This folder contains the results of the Linear Discriminant Analysis (LDA) classification applied to the MNIST dataset. The results include model performance metrics, visualizations, and any other output generated during the analysis.
 
-This folder contains various projects focused on classification algorithms. Each project demonstrates the use of different classification techniques, datasets, and performance evaluation metrics. These examples are designed to help you understand how to implement and apply classification algorithms to solve real-world problems.
+## Contents
 
-## Projects
+- **`confusion_matrix.png`**: A heatmap visualization of the confusion matrix showing the performance of the LDA model on the validation or test set.
+- **`classification_report.txt`**: A text file containing the precision, recall, f1-score, and support for each digit class, generated after evaluating the LDA model.
+- **`lda_2d_projection.png`**: (Optional) A scatter plot showing the projection of the MNIST data onto the first two Linear Discriminants. This file is included if the 2D projection step was performed.
+- **`test_predictions.csv`**: A CSV file containing the predicted labels for the test dataset. Each row corresponds to a test image, and the column contains the predicted digit (0-9).
+- **`validation_accuracy.txt`**: A text file recording the validation accuracy achieved by the LDA model.
 
-### 1. Logistic Regression
-- **Description**: Binary classification using logistic regression.
-- **Dataset**: Breast Cancer Wisconsin dataset.
-- **Code**: [logistic_regression.py](logistic_regression.py)
-- **Usage**: 
-    ```bash
-    python logistic_regression.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
+## How to Interpret the Results
 
-### 2. K-Nearest Neighbors (KNN)
-- **Description**: KNN algorithm for multi-class classification.
-- **Dataset**: Iris dataset.
-- **Code**: [knn.py](knn.py)
-- **Usage**:
-    ```bash
-    python knn.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
+- **Confusion Matrix**: This matrix provides insight into which digits are being correctly classified and which ones are being misclassified. The diagonal elements represent correct predictions, while off-diagonal elements indicate misclassifications.
 
-### 3. Decision Trees
-- **Description**: Decision tree algorithm for classification tasks.
-- **Dataset**: Titanic dataset.
-- **Code**: [decision_tree.py](decision_tree.py)
-- **Usage**:
-    ```bash
-    python decision_tree.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
+- **Classification Report**: This report provides detailed performance metrics for each digit class, including precision (the proportion of positive identifications that were actually correct), recall (the proportion of actual positives that were identified correctly), and the F1-score (a weighted average of precision and recall).
 
-### 4. Random Forest
-- **Description**: Ensemble method using random forests for classification.
-- **Dataset**: Heart Disease dataset.
-- **Code**: [random_forest.py](random_forest.py)
-- **Usage**:
-    ```bash
-    python random_forest.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
+- **2D Projection**: If generated, this visualization helps understand how well the LDA model separates the classes in a lower-dimensional space. It is useful for visual inspection but may not be necessary for practical model evaluation.
 
-### 5. Support Vector Machine (SVM)
-- **Description**: SVM implementation for binary and multi-class classification.
-- **Dataset**: Wine dataset.
-- **Code**: [svm.py](svm.py)
-- **Usage**:
-    ```bash
-    python svm.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
+- **Test Predictions**: These are the model's predictions for the unseen test dataset. This file can be used to submit results to a competition or to further evaluate the model's performance on new data.
 
-### 6. Neural Networks
-- **Description**: Neural network implementation for classification.
-- **Dataset**: MNIST dataset.
-- **Code**: [neural_network.py](neural_network.py)
-- **Usage**:
-    ```bash
-    python neural_network.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `tensorflow`, `matplotlib`
+- **Validation Accuracy**: This file records the overall accuracy of the model on the validation set, providing a quick metric to gauge model performance.
 
-### 7. Naive Bayes
-- **Description**: Naive Bayes algorithm for text classification.
-- **Dataset**: SMS Spam Collection dataset.
-- **Code**: [naive_bayes.py](naive_bayes.py)
-- **Usage**:
-    ```bash
-    python naive_bayes.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
+## Conclusion
 
-## How to Use
-
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/MachineLearningProjects.git
-    cd MachineLearningProjects/Classification
-    ```
-
-2. **Install Dependencies**:
-    Make sure you have the necessary Python libraries installed. You can install them using pip:
-    ```bash
-    pip install numpy pandas scikit-learn matplotlib tensorflow
-    ```
-
-3. **Run the Code**:
-    Navigate to the project folder and run the respective Python script as shown in the usage examples above.
-
-## Additional Resources
-
-For more detailed explanations and theoretical background, you can refer to the following resources:
-- [Scikit-Learn Documentation](https://scikit-learn.org/stable/documentation.html)
-- [Python Machine Learning by Example](https://www.packtpub.com/product/python-machine-learning-by-example/9781789616721)
-- [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python)
-
-## Contributing
-
-Contributions are welcome! If you have any improvements or new projects to add, please submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
+The results stored in this folder are critical for evaluating the effectiveness of the LDA model on the MNIST dataset. By analyzing these outputs, one can determine the strengths and weaknesses of the model and make informed decisions about potential improvements or alternative approaches.
