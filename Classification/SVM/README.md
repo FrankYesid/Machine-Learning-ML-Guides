@@ -1,7 +1,3 @@
-Claro, aquí tienes un ejemplo detallado para el archivo `classification.md` dentro de la carpeta "Classification":
-
----
-
 # Classification
 
 ## Overview
