@@ -19,7 +19,7 @@ This folder contains various projects focused on classification algorithms. Each
 
 ### 2. K-Nearest Neighbors (KNN)
 - **Description**: KNN algorithm for multi-class classification.
-- **Dataset**: Iris dataset.
+- **Dataset**: MNIST Dataset
 - **Code**: [knn.py](knn.py)
 - **Usage**:
     ```bash
@@ -49,7 +49,7 @@ This folder contains various projects focused on classification algorithms. Each
 
 ### 5. Support Vector Machine (SVM)
 - **Description**: SVM implementation for binary and multi-class classification.
-- **Dataset**: Wine dataset.
+- **Dataset**: MNIST Dataset
 - **Code**: [svm.py](svm.py)
 - **Usage**:
     ```bash
