@@ -1,117 +1,141 @@
-Claro, aquí tienes un ejemplo detallado para el archivo `classification.md` dentro de la carpeta "Classification":
+# Autoencoders for Dimensionality Reduction and Data Reconstruction
+
+This folder contains resources, scripts, and documentation for training and evaluating Autoencoders, a type of neural network used for unsupervised learning tasks like dimensionality reduction and data reconstruction. The project applies Autoencoders to the MNIST dataset and demonstrates how to train the model, test it, and analyze the results.
+
+## 1. Project Structure
+
+The project is organized as follows:
+
+```
+Autoencoders/
+├── data/
+│   └── mnist_train.csv
+│   └── mnist_test.csv
+├── docs/
+│   └── autoencoders_overview.md
+│   └── bibliography.md
+├── results/
+│   └── reconstructed_images.png
+│   └── loss_plot.png
+│   └── encoded_data.csv
+├── utils.py
+├── autoencoder_model.py
+├── autoencoder_training.ipynb
+├── LICENSE
+└── README.md
+```
+
+### Explanation of Directories:
+
+- **data/**: Contains the training and test datasets in CSV format, used for training and evaluating the Autoencoder.
+- **docs/**: Includes documentation that explains the theory behind Autoencoders and references for further reading.
+- **results/**: Stores the outputs from training and testing the Autoencoder, such as the loss plot, reconstructed images, and encoded data.
+- **utils.py**: Contains utility functions for loading data, saving results, and handling data preprocessing tasks.
+- **autoencoder_model.py**: Python script containing the architecture of the Autoencoder neural network.
+- **autoencoder_training.ipynb**: A Jupyter Notebook that demonstrates how to train the Autoencoder, visualize the training process, and evaluate the model's performance.
+
+## 2. Dataset
+
+The MNIST dataset is used for training and testing the Autoencoder. It is divided into:
+
+- **mnist_train.csv**: The training set of handwritten digits.
+- **mnist_test.csv**: The test set of handwritten digits.
+
+Each CSV file contains:
+
+- **Features**: Pixel values of 28x28 grayscale images, flattened into a vector of size 784.
+- **Labels**: Although labels are not directly used in Autoencoders (since it's unsupervised), the test dataset includes labels for evaluation.
+
+## 3. Key Functions (utils.py)
+
+The `utils.py` file contains functions used throughout the project:
+
+- **`load_data(train_path, test_path)`**: Loads the training and test data from CSV files.
+- **`save_reconstructed_images(images, filename)`**: Saves a grid of original vs. reconstructed images to a PNG file.
+- **`plot_loss(loss_history, filename)`**: Plots and saves the training loss over epochs.
+- **`save_encoded_data(encoded_data, filename)`**: Saves the encoded (compressed) representations of the input data to a CSV file.
+
+## 4. Autoencoder Model (autoencoder_model.py)
+
+The Autoencoder model is implemented in `autoencoder_model.py`, which defines the encoder and decoder parts of the network.
+
+- **Encoder**: Reduces the dimensionality of the input data by compressing it into a latent space representation.
+- **Decoder**: Reconstructs the original data from the latent space representation.
+
+The model is trained using the mean squared error (MSE) loss function, which measures the reconstruction error, and the Adam optimizer for training.
+
+## 5. Training Workflow (autoencoder_training.ipynb)
+
+The `autoencoder_training.ipynb` notebook contains the workflow for training the Autoencoder and evaluating its performance on the MNIST dataset.
+
+### Steps in the Notebook:
+
+1. **Load Data**: The notebook loads the training and test datasets using the `utils.load_data()` function.
+  
+2. **Build the Autoencoder**:
+   - The Autoencoder is built with an encoder to compress the input and a decoder to reconstruct it.
+   - The model is compiled with the Adam optimizer and mean squared error loss.
+
+3. **Train the Model**:
+   - The model is trained on the MNIST dataset over a defined number of epochs.
+   - The training process outputs a loss plot that shows how well the model learns to reconstruct the input data over time.
+
+4. **Evaluate the Model**:
+   - After training, the model is tested on the test dataset to evaluate its reconstruction capability.
+   - The reconstructed images are compared to the original images, and both are visualized.
+
+5. **Save Results**:
+   - The training loss is saved as a plot (`loss_plot.png`).
+   - The reconstructed images are saved as a grid image (`reconstructed_images.png`).
+   - The encoded (compressed) representations are saved as a CSV file (`encoded_data.csv`).
+
+### Example Code Snippet:
+
+```python
+from autoencoder_model import Autoencoder
+import utils
+
+# Load training and test data
+X_train, X_test = utils.load_data('data/mnist_train.csv', 'data/mnist_test.csv')
+
+# Build and compile the Autoencoder model
+autoencoder = Autoencoder(input_dim=784, encoding_dim=32)
+autoencoder.compile(optimizer='adam', loss='mse')
+
+# Train the Autoencoder
+history = autoencoder.fit(X_train, X_train, epochs=50, batch_size=256, validation_data=(X_test, X_test))
+
+# Plot and save the training loss
+utils.plot_loss(history.history['loss'], history.history['val_loss'], 'results/loss_plot.png')
+
+# Generate and save reconstructed images
+reconstructed_images = autoencoder.predict(X_test)
+utils.save_reconstructed_images(X_test, reconstructed_images, 'results/reconstructed_images.png')
+
+# Save encoded representations
+encoded_data = autoencoder.encoder.predict(X_test)
+utils.save_encoded_data(encoded_data, 'results/encoded_data.csv')
+```
+
+## 6. Results
+
+Once the Autoencoder has been trained and evaluated, the results are stored in the `results/` folder:
+
+- **`loss_plot.png`**: A plot showing the training and validation loss over the epochs.
+- **`reconstructed_images.png`**: A comparison between the original and reconstructed images from the test dataset.
+- **`encoded_data.csv`**: A CSV file containing the encoded (compressed) representations of the test dataset in the latent space.
+
+## 7. Documentation
+
+Further documentation on Autoencoders and their applications can be found in the `docs/` folder:
+
+- **`autoencoders_overview.md`**: Provides a detailed explanation of Autoencoders, their architecture, and how they can be used for tasks like dimensionality reduction and data compression.
+- **`bibliography.md`**: Lists the sources and references used for studying Autoencoders, including research papers, online tutorials, and books.
+
+## 8. License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ---
 
-# Classification
-
-## Overview
-
-This folder contains various projects focused on classification algorithms. Each project demonstrates the use of different classification techniques, datasets, and performance evaluation metrics. These examples are designed to help you understand how to implement and apply classification algorithms to solve real-world problems.
-
-## Projects
-
-### 1. Logistic Regression
-- **Description**: Binary classification using logistic regression.
-- **Dataset**: Breast Cancer Wisconsin dataset.
-- **Code**: [logistic_regression.py](logistic_regression.py)
-- **Usage**: 
-    ```bash
-    python logistic_regression.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
-
-### 2. K-Nearest Neighbors (KNN)
-- **Description**: KNN algorithm for multi-class classification.
-- **Dataset**: Iris dataset.
-- **Code**: [knn.py](knn.py)
-- **Usage**:
-    ```bash
-    python knn.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
-
-### 3. Decision Trees
-- **Description**: Decision tree algorithm for classification tasks.
-- **Dataset**: Titanic dataset.
-- **Code**: [decision_tree.py](decision_tree.py)
-- **Usage**:
-    ```bash
-    python decision_tree.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
-
-### 4. Random Forest
-- **Description**: Ensemble method using random forests for classification.
-- **Dataset**: Heart Disease dataset.
-- **Code**: [random_forest.py](random_forest.py)
-- **Usage**:
-    ```bash
-    python random_forest.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
-
-### 5. Support Vector Machine (SVM)
-- **Description**: SVM implementation for binary and multi-class classification.
-- **Dataset**: Wine dataset.
-- **Code**: [svm.py](svm.py)
-- **Usage**:
-    ```bash
-    python svm.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
-
-### 6. Neural Networks
-- **Description**: Neural network implementation for classification.
-- **Dataset**: MNIST dataset.
-- **Code**: [neural_network.py](neural_network.py)
-- **Usage**:
-    ```bash
-    python neural_network.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `tensorflow`, `matplotlib`
-
-### 7. Naive Bayes
-- **Description**: Naive Bayes algorithm for text classification.
-- **Dataset**: SMS Spam Collection dataset.
-- **Code**: [naive_bayes.py](naive_bayes.py)
-- **Usage**:
-    ```bash
-    python naive_bayes.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
-
-## How to Use
-
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/MachineLearningProjects.git
-    cd MachineLearningProjects/Classification
-    ```
-
-2. **Install Dependencies**:
-    Make sure you have the necessary Python libraries installed. You can install them using pip:
-    ```bash
-    pip install numpy pandas scikit-learn matplotlib tensorflow
-    ```
-
-3. **Run the Code**:
-    Navigate to the project folder and run the respective Python script as shown in the usage examples above.
-
-## Additional Resources
-
-For more detailed explanations and theoretical background, you can refer to the following resources:
-- [Scikit-Learn Documentation](https://scikit-learn.org/stable/documentation.html)
-- [Python Machine Learning by Example](https://www.packtpub.com/product/python-machine-learning-by-example/9781789616721)
-- [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python)
-
-## Contributing
-
-Contributions are welcome! If you have any improvements or new projects to add, please submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Este archivo proporciona una visión detallada de los proyectos de clasificación, incluidos los scripts de ejemplo, instrucciones de uso y dependencias necesarias.
+This `README.md` provides an overview of the Autoencoder project, explaining the folder structure, datasets, code, and workflow involved in training and testing an Autoencoder on the MNIST dataset. It is designed to be a flexible starting point for experimenting with Autoencoders on different datasets and use cases.
