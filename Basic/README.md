@@ -4,57 +4,6 @@
 
 This folder contains implementations of basic machine learning algorithms. The projects included here serve as a foundation for understanding fundamental machine learning concepts and techniques. Each project is accompanied by detailed explanations and code examples to help you get started.
 
-## Projects
-
-### 1. Linear Regression
-- **Description**: Implementation of a linear regression model to predict continuous values.
-- **Dataset**: Simple synthetic dataset with one feature.
-- **Code**: [linear_regression.py](linear_regression.py)
-- **Usage**: 
-    ```bash
-    python linear_regression.py
-    ```
-- **Dependencies**: `numpy`, `matplotlib`, `scikit-learn`
-
-### 2. Logistic Regression
-- **Description**: Binary classification using logistic regression.
-- **Dataset**: Synthetic dataset with two classes.
-- **Code**: [logistic_regression.py](logistic_regression.py)
-- **Usage**:
-    ```bash
-    python logistic_regression.py
-    ```
-- **Dependencies**: `numpy`, `matplotlib`, `scikit-learn`
-
-### 3. K-Nearest Neighbors (KNN)
-- **Description**: Implementation of KNN algorithm for classification tasks.
-- **Dataset**: Iris dataset.
-- **Code**: [knn.py](knn.py)
-- **Usage**:
-    ```bash
-    python knn.py
-    ```
-- **Dependencies**: `numpy`, `matplotlib`, `scikit-learn`
-
-### 4. Decision Trees
-- **Description**: Implementation of decision trees for classification.
-- **Dataset**: Titanic dataset.
-- **Code**: [decision_tree.py](decision_tree.py)
-- **Usage**:
-    ```bash
-    python decision_tree.py
-    ```
-- **Dependencies**: `numpy`, `pandas`, `scikit-learn`
-
-### 5. Support Vector Machines (SVM)
-- **Description**: SVM implementation for binary classification.
-- **Dataset**: Synthetic dataset with two classes.
-- **Code**: [svm.py](svm.py)
-- **Usage**:
-    ```bash
-    python svm.py
-    ```
-- **Dependencies**: `numpy`, `matplotlib`, `scikit-learn`
 
 ## How to Use
 
