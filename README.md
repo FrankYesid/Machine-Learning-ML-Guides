@@ -45,3 +45,9 @@ You can install these dependencies by running:
 !pip install numpy pandas matplotlib tensorflow torch catboost scikit-learn shap streamlit sweetviz
 !pip install pandas==1.3.5
 ```
+
+Please note that the versions of the libraries may need to be adjusted based on your specific requirements.txt
+
+```bash
+!pip install -r requirements.txt
+```

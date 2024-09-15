@@ -1,0 +1,35 @@
+# Data handling
+pandas==2.0.3
+numpy==1.25.2
+
+# Scikit-learn for machine learning models (KNN, SVM, LDA, clustering, etc.)
+scikit-learn==1.3.0
+
+# Matplotlib and Seaborn for plotting and visualizations
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Utils for clustering evaluation (Silhouette, Dunn Index, etc.)
+scipy==1.11.1
+
+# Streamlit for building interactive applications (if needed)
+streamlit==1.23.1
+
+# For SVM models
+libsvm==3.25.0
+
+# For loading and manipulating images (optional)
+Pillow==10.0.0
+
+# For hierarchical clustering and dendrograms
+fastcluster==1.2.6
+
+# To save results in CSV and manage files
+openpyxl==3.1.2
+xlrd==2.0.1
+
+# Jupyter notebook support
+notebook==7.0.2
+
+# PyPlot for additional plotting capabilities
+pyplot==3.2.2
