@@ -15,7 +15,7 @@ Este proyecto es una solución de extremo a extremo (End-to-End) en Python. El p
 
 ## Requisitos
 
-- Python 3.8+
+- Python 3.11+
 - pip
 - Git
 
@@ -23,14 +23,14 @@ Este proyecto es una solución de extremo a extremo (End-to-End) en Python. El p
 
 1. Clona este repositorio:
     ```bash
-    git clone https://github.com/usuario/proyecto-end-to-end.git
-    cd proyecto-end-to-end
+    git clone https://github.com/FrankYesid/Machine Learning (ML) Guides/End-to-End.git
+    cd Machine Learning (ML) Guides/End-to-End
     ```
 
 2. Crea y activa un entorno virtual:
     ```bash
     python -m venv venv
-    source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
+    source venv/bin/activate  # En Windows usa `.\.venv\Scripts\activate`
     ```
 
 3. Instala las dependencias:
@@ -51,23 +51,23 @@ Este proyecto es una solución de extremo a extremo (End-to-End) en Python. El p
     ```
 
 3. **Análisis exploratorio**:
-    Abre y ejecuta los notebooks en la carpeta `notebooks`:
+    Abre y ejecuta los notebooks en la carpeta `src/notebooks`:
     ```bash
-    jupyter notebook notebooks/analisis_exploratorio.ipynb
+    jupyter notebook notebooks/END-To-END Machine Learning.ipynb
     ```
 
 4. **Modelado**:
     ```bash
-    python scripts/modelado.py
+    python src/train_model.py
     ```
 
 5. **Evaluación**:
     ```bash
-    python scripts/evaluacion.py
+    python src/predict.py
     ```
 
 6. **Despliegue**:
-    Sigue las instrucciones en `deploy/README.md` para desplegar el modelo.
+    Sigue las instrucciones en `README.md` para desplegar el modelo.
 
 ## Contribución
 
@@ -119,7 +119,7 @@ python train_model.py
 Evaluate the Model:
 
 Copiar código
-python evaluate_model.py
+python predict.py
 Next Steps:
 
 Improve model accuracy through hyperparameter tuning.
