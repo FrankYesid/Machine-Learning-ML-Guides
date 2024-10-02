@@ -1,4 +1,3 @@
-import os
 import shap
 import pandas as pd
 import numpy as np
@@ -7,7 +6,6 @@ from matplotlib import pyplot as plt
 from pyarrow import parquet as pq
 from catboost import CatBoostClassifier, Pool
 import joblib
-import requests
 
 # Path of the trained model and data
 MODEL_PATH = "model/catboost_model.cbm" 
@@ -17,14 +15,7 @@ st.set_page_config(page_title="Churn Project")
 
 @st.cache_resource
 def load_data():
-    try:
-        data = pd.read_parquet(DATA_PATH)
-    except FileNotFoundError:
-        st.error("Data file not found.")
-        return None
-    except Exception as e:
-        st.error(f"An error occurred while loading data: {e}")
-        return None
+    data = pd.read_parquet(DATA_PATH)
     return data
 
 def load_x_y(file_path):
@@ -34,14 +25,7 @@ def load_x_y(file_path):
 
 def load_model():
     model = CatBoostClassifier()
-    try:
-        model.load_model(MODEL_PATH)
-    except FileNotFoundError:
-        st.error("Model file not found.")
-        return None
-    except Exception as e:
-        st.error(f"An error occurred while loading the model: {e}")
-        return None
+    model.load_model(MODEL_PATH)
     return model
 
 def calculate_shap(model, X_train, X_test):
@@ -61,11 +45,10 @@ def plot_shap_values(model, explainer, shap_values_cat_train, shap_values_cat_te
 
 def display_shap_summary(shap_values_cat_train, X_train):
     # Create the plot summarizing the SHAP values
-    fig, ax = plt.subplots(figsize=(12, 8))
-    shap.summary_plot(shap_values_cat_train, X_train, plot_type="bar", show=False)
-    st.pyplot(fig)
+    shap.summary_plot(shap_values_cat_train, X_train, plot_type="bar", plot_size=(12,12))
+    summary_fig, _ = plt.gcf(), plt.gca()
+    st.pyplot(summary_fig)
     plt.close()
-
 
 def display_shap_waterfall_plot(explainer, expected_value, shap_values, feature_names, max_display=20):
     # Create SHAP waterfall drawing
@@ -93,10 +76,11 @@ def plot_shap(model, data, customer_id, X_train, X_test):
     display_shap_waterfall_plot(explainer, explainer.expected_value, shap_values_cat_test[customer_index], feature_names=X_test.columns, max_display=20)
 
 st.title("Telco Customer Churn Project")
+
 def main():
     model = load_model()
     data = load_data()
-    
+
     X_train = load_x_y("data/X_train.pkl")
     X_test = load_x_y("data/X_test.pkl")
     y_train = load_x_y("data/y_train.pkl")
@@ -177,38 +161,15 @@ def main():
                 "TotalCharges": [total_charges]
             })
 
-            # Send the POST request to the FastAPI API
-            response =  requests.post("http://127.0.0.1:8000/predict/", json=new_customer_data.to_dict()) #requests.post("http://127.0.0.1:5000/predict/", json=new_customer_data.to_dict())
-            # print(pd.DataFrame([new_customer_data]))
-            print(new_customer_data.to_dict())
-            # print(pd.DataFrame([new_customer_data.to_dict()]))
-
-            # # Get the response from the FastAPI endpoint
-            # churn_probability = response.json()["Churn Probability"]
-
-            # # Predict churn probability using the model
+            # Predict churn probability using the model
             churn_probability = model.predict_proba(new_customer_data)[:, 1]
 
             # Format churn probability
             formatted_churn_probability = "{:.2%}".format(churn_probability.item())
 
             big_text = f"<h1>Churn Probability: {formatted_churn_probability}</h1>"
-            
             st.markdown(big_text, unsafe_allow_html=True)
             st.write(new_customer_data.to_dict())
-
-            if response.status_code == 600:
-                # Get the churn probability from the response
-                # churn_probability = response.json()["Churn Probability"]
-
-                # Format churn probability
-                formatted_churn_probability = "{:.2%}".format(churn_probability)
-
-                # big_text = f"<h1>Churn Probability: {formatted_churn_probability}</h1>"
-                # st.markdown(big_text, unsafe_allow_html=True)
-                # st.write(new_customer_data.to_dict())
-            else:
-                st.write("Error: Unable to connect to the FastAPI server.")
 
 if __name__ == "__main__":
     main()
