@@ -15,9 +15,9 @@ Este proyecto es una solución de extremo a extremo (End-to-End) en Python. El p
 
 ## Requisitos
 
-- Python 3.11+
-- pip
-- Git
+Python 3.11.+
+pip (Python package manager)
+Git (Version control tool)
 
 ## Instalación
 
