@@ -1,7 +1,3 @@
-Claro, aquí tienes un ejemplo detallado para el archivo `endtoend.md` dentro de la carpeta "End-to-End":
-
----
-
 # End-to-End
 
 ## Overview
