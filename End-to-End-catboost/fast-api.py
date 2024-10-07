@@ -5,7 +5,7 @@ from catboost import CatBoostClassifier
 from pydantic import BaseModel, constr 
 
 # Path to the model
-MODEL_PATH = "model/catboost_model.cbm" 
+MODEL_PATH = "src/model/catboost_model.cbm" 
 
 # Function to load the trained model
 def load_model():  

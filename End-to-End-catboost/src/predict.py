@@ -2,7 +2,7 @@ import pandas as pd
 from catboost import CatBoostClassifier
 
 # Load the trained model
-MODEL_PATH = "model/catboost_model.cbm" 
+MODEL_PATH = "../scr/model/catboost_model.cbm" 
 model = CatBoostClassifier()
 model.load_model(MODEL_PATH)
 
