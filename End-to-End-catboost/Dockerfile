@@ -6,10 +6,10 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Specify working directory
-WORKDIR /app
+WORKDIR /src
 
 # Copy application code
 COPY . .
 
 # Run the application
-CMD ["python", "src/predict.py"]
+CMD ["python", "predict.py"]

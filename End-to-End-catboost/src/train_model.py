@@ -16,7 +16,7 @@ from catboost import CatBoostClassifier, Pool
 
 ################################################## Data Loading and Editing ##################################################
 
-data_path = "../data/WA_Fn-UseC_-Telco-Customer-Churn.csv"
+data_path = "../../data/WA_Fn-UseC_-Telco-Customer-Churn.csv"
 df = pd.read_csv(data_path)
 
 # Convert TotalCharges to numeric, filling NaN values
@@ -75,7 +75,7 @@ result = pd.DataFrame({'Accuracy': accuracy, 'Recall': recall, 'Roc_Auc': roc_au
 print(result)
 
 # Save the model in the 'model' directory
-model_dir = "../model"
+model_dir = "../../src/model"
 if not os.path.exists(model_dir):
     os.makedirs(model_dir)
 

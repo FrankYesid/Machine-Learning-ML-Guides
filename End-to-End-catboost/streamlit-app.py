@@ -8,8 +8,8 @@ from catboost import CatBoostClassifier, Pool
 import joblib
 
 # Path of the trained model and data
-MODEL_PATH = "model/catboost_model.cbm" 
-DATA_PATH = "data/churn_data_regulated.parquet"
+MODEL_PATH = "src/model/catboost_model.cbm" 
+DATA_PATH = "data/process/churn_data_regulated.parquet"
 
 st.set_page_config(page_title="Churn Project")
 
@@ -81,10 +81,10 @@ def main():
     model = load_model()
     data = load_data()
 
-    X_train = load_x_y("data/X_train.pkl")
-    X_test = load_x_y("data/X_test.pkl")
-    y_train = load_x_y("data/y_train.pkl")
-    y_test = load_x_y("data/y_test.pkl")
+    X_train = load_x_y("data/process/X_train.pkl")
+    X_test = load_x_y("data/process/X_test.pkl")
+    y_train = load_x_y("data/process/y_train.pkl")
+    y_test = load_x_y("data/process/y_test.pkl")
 
     max_tenure = data['tenure'].max()
     max_monthly_charges = data['MonthlyCharges'].max()
