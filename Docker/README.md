@@ -1,9 +1,5 @@
-Claro, aquí tienes un ejemplo detallado para el archivo `docker.md` dentro de la carpeta "Docker":
-
----
-
 # Docker
-    cd dockerized_jupyter
+    cd Docker
 
 ## Overview
 
@@ -85,6 +81,9 @@ For more detailed explanations and theoretical background, you can refer to the 
 - [Docker Compose Documentation](https://docs.docker.com/compose/)
 - [Deploying Machine Learning Models](https://www.oreilly.com/library/view/deploying-machine-learning/9781492045097/)
 
+
+More: [**Instrction**](docker.md)
+
 ## Contributing
 
 Contributions are welcome! If you have any improvements or new projects to add, please submit a pull request.
@@ -94,5 +93,3 @@ Contributions are welcome! If you have any improvements or new projects to add, 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-Este archivo proporciona una visión detallada de los proyectos relacionados con Docker, incluidos los archivos de configuración de Docker, instrucciones de uso y dependencias necesarias.

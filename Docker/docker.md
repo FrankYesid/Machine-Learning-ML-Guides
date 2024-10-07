@@ -1,98 +1,100 @@
-Claro, aquí tienes un ejemplo detallado para el archivo `docker.md` dentro de la carpeta "Docker":
+# Churn Prediction Project
+
+This project implements a churn prediction system using machine learning techniques. Docker is used to automate and standardize the execution environment. Streamlit and FastAPI are integrated for visualization and prediction API.
+
+## Steps and Considerations
+
+### 1. Install Dependencies
+
+**Instruction:**
+```bash
+pip install -r requirements.txt
+```
+**Details:**
+- Before running any script, you need to install the dependencies listed in `requirements.txt`. This includes necessary libraries like `pandas`, `catboost`, `scikit-learn`, among others.
+
+### 2. Build the Model in `train_model.py`
+
+- This script contains the preprocessing logic and model development.
+- **Key Point:** The model should be saved in a file for future predictions.
+
+### 3. Create the `predict.py` Script
+
+This file contains the same preprocessing flow as `train_model.py`, but with an additional section for making predictions.
+
+- **Prediction Instruction:**
+```bash
+python src/predict.py
+```
+- **Model File:** Ensure that the trained model is in the correct path. Example: `model/cat_model.cbm`.
+
+### 4. Configure the `Dockerfile`
+
+The `Dockerfile` is a configuration file that creates a standardized container environment where your application will run. Here are the steps to create it:
+
+1. **Select a base image:**
+    ```Dockerfile
+    FROM python:3.9-slim
+    ```
+    This provides the minimal Python 3.9 environment for execution.
+
+2. **Install dependencies:**
+    ```Dockerfile
+    COPY requirements.txt requirements.txt
+    RUN pip install --no-cache-dir -r requirements.txt
+    ```
+    Copies the `requirements.txt` file to the container and installs the dependencies.
+
+3. **Specify the working directory and copy the code:**
+    ```Dockerfile
+    WORKDIR /app
+    COPY . .
+    ```
+
+4. **Run the prediction script:**
+    ```Dockerfile
+    CMD ["python", "src/predict.py"]
+    ```
+
+### 5. Build the Docker Container
+
+**Instruction:**
+```bash
+docker build -t churn-prediction-app .
+```
+
+- **Key Point:** This command builds the Docker container based on the `Dockerfile`. Ensure that all necessary files, including scripts and the model, are present.
+
+### 6. Run the Docker Container
+
+**Instruction:**
+```bash
+docker run -it churn-prediction-app
+```
+This command runs the container and launches the prediction application. Enter the customer information as prompted to predict their likelihood of churn.
+
+### 7. Visualization with Streamlit and FastAPI
+
+You can integrate the prediction with Streamlit and FastAPI to provide a user-friendly graphical interface and an API.
+
+- **Streamlit:** Displays the churn probability in a web application.
+- **FastAPI:** Allows other users to interact with the model via an API.
+
+### 8. Docker Build and Run Commands
+
+- **Build the Docker image:**
+    ```bash
+    docker build -t churn-prediction-app .
+    ```
+
+- **Run the Docker image:**
+    ```bash
+    docker run -it churn-prediction-app
+    ```
+
+### 9. Future Tasks
+
+- Optimize the model's accuracy by adjusting hyperparameters.
+- Develop a complete user interface for real-time prediction.
 
 ---
-
-# Docker
-
-## Overview
-
-This folder contains Docker configuration files and scripts to containerize various machine learning projects. Each project demonstrates how to create a Docker container to ensure consistency and portability of the development and deployment environments.
-
-## Projects
-
-### 1. Dockerized Jupyter Notebook
-- **Description**: Docker setup for running Jupyter Notebooks with pre-installed machine learning libraries.
-- **Files**: [Dockerfile](dockerized_jupyter/Dockerfile), [docker-compose.yml](dockerized_jupyter/docker-compose.yml)
-- **Usage**: 
-    ```bash
-    cd dockerized_jupyter
-    docker-compose up
-    ```
-- **Dependencies**: `docker`, `docker-compose`
-
-### 2. Docker for Flask API
-- **Description**: Containerized Flask API for serving a machine learning model.
-- **Files**: [Dockerfile](flask_api/Dockerfile), [app.py](flask_api/app.py)
-- **Usage**:
-    ```bash
-    cd flask_api
-    docker build -t flask_api .
-    docker run -p 5000:5000 flask_api
-    ```
-- **Dependencies**: `docker`
-
-### 3. TensorFlow Serving with Docker
-- **Description**: Docker setup for serving TensorFlow models using TensorFlow Serving.
-- **Files**: [Dockerfile](tensorflow_serving/Dockerfile), [model/](tensorflow_serving/model/)
-- **Usage**:
-    ```bash
-    cd tensorflow_serving
-    docker build -t tf_serving .
-    docker run -p 8501:8501 -v $(pwd)/model:/models/model -e MODEL_NAME=model tf_serving
-    ```
-- **Dependencies**: `docker`
-
-### 4. Streamlit App with Docker
-- **Description**: Containerized Streamlit application for interactive data visualization.
-- **Files**: [Dockerfile](streamlit_app/Dockerfile), [app.py](streamlit_app/app.py)
-- **Usage**:
-    ```bash
-    cd streamlit_app
-    docker build -t streamlit_app .
-    docker run -p 8501:8501 streamlit_app
-    ```
-- **Dependencies**: `docker`
-
-### 5. PyTorch Model Deployment
-- **Description**: Docker configuration for deploying a PyTorch model.
-- **Files**: [Dockerfile](pytorch_deployment/Dockerfile), [serve.py](pytorch_deployment/serve.py)
-- **Usage**:
-    ```bash
-    cd pytorch_deployment
-    docker build -t pytorch_deployment .
-    docker run -p 8080:8080 pytorch_deployment
-    ```
-- **Dependencies**: `docker`
-
-## How to Use
-
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/MachineLearningProjects.git
-    cd MachineLearningProjects/Docker
-    ```
-
-2. **Install Docker**:
-    Make sure you have Docker and Docker Compose installed on your machine. You can install Docker from [here](https://docs.docker.com/get-docker/) and Docker Compose from [here](https://docs.docker.com/compose/install/).
-
-3. **Build and Run the Docker Containers**:
-    Navigate to the project folder and follow the usage instructions to build and run the Docker containers.
-
-## Additional Resources
-
-For more detailed explanations and theoretical background, you can refer to the following resources:
-- [Docker Documentation](https://docs.docker.com/)
-- [Docker Compose Documentation](https://docs.docker.com/compose/)
-- [Deploying Machine Learning Models](https://www.oreilly.com/library/view/deploying-machine-learning/9781492045097/)
-
-## Contributing
-
-Contributions are welcome! If you have any improvements or new projects to add, please submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Este archivo proporciona una visión detallada de los proyectos relacionados con Docker, incluidos los archivos de configuración de Docker, instrucciones de uso y dependencias necesarias.
