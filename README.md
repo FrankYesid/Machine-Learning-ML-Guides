@@ -15,7 +15,7 @@ The main goal of this repository is to provide a centralized reference for vario
 - [**Dashboard**](Dashboard/dash.md): Dashboards and data visualization tools.
 - [**Dimensionality Reduction**](Dimensionality_Reduction/reduction.md): Dimensionality reduction techniques.
 - [**Docker**](Docker/docker.md): Docker configuration files.
-- [**End-to-End**](End-to-End/EndtoEnd.md): Complete end-to-end machine learning projects.
+- [**End-to-End-catboost**](End-to-End-catboost/EndtoEnd.md): Complete End-to-End-catboost machine learning projects.
 - [**Lector OCR**](Lector_OCR/README.md): Projects related to optical character recognition.
 - [**Roadmaps**](Roadmaps/README.md): Roadmaps and study plans for learning machine learning.
 - [**Shap**](Shap/README.md): Projects and examples using SHAP for model interpretability.
