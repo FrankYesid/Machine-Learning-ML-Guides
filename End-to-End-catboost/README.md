@@ -42,12 +42,12 @@ Git (Version control tool)
 
 1. **Recopilación de datos**:
     ```bash
-    python scripts/recopilacion_datos.py
+    python scripts/recopilacion_datos.py # esto se encuentra analizado en el cuaderno en src/notebooks/END-To-END Machine Learning
     ```
 
 2. **Preprocesamiento**:
     ```bash
-    python scripts/preprocesamiento.py
+    python scripts/preprocesamiento.py # esto se encuentra analizado en el cuaderno en src/notebooks/END-To-END Machine Learning
     ```
 
 3. **Análisis exploratorio**:
@@ -93,37 +93,47 @@ Git (Version control tool)
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
 
-# Project Update: Churn Prediction
+# Actualización del Proyecto: Predicción de Churn
 
-## Project Description:
+## Descripción del Proyecto:
 
-This project is a complete implementation of a churn prediction system using machine learning techniques. The goal is to predict whether a customer will stop using a service based on historical data and customer features.
+Este proyecto es una implementación completa de un sistema de predicción de churn (abandono de clientes) utilizando técnicas de aprendizaje automático. El objetivo es predecir si un cliente dejará de usar un servicio basándose en datos históricos y características del cliente.
 
-## Changes in this Update:
+## Cambios en esta Actualización:
 
-Exploratory Data Analysis (EDA): Added scripts for data cleaning and visualization.
-Feature Engineering: Implemented new techniques for feature creation from raw data.
-Modeling: Integrated multiple machine learning models including Random Forest, Gradient Boosting, and XGBoost.
-Model Evaluation: Added detailed evaluation metrics to compare model performance.
-Deployment: Provided scripts and configurations to deploy the model in a production environment.
-Instructions:
+- **Análisis Exploratorio de Datos (EDA)**: Se añadieron scripts para la limpieza de datos y visualización.
+- **Ingeniería de Características**: Se implementaron nuevas técnicas para la creación de características a partir de datos brutos.
+- **Modelado**: Se integraron múltiples modelos de machine learning, incluyendo Random Forest, Gradient Boosting y XGBoost.
+- **Evaluación de Modelos**: Se añadieron métricas de evaluación detalladas para comparar el rendimiento de los modelos.
+- **Despliegue**: Se proporcionaron scripts y configuraciones para desplegar el modelo en un entorno de producción.
 
-Install Dependencies:
+## Instrucciones:
 
-Copiar código
+### Instalar Dependencias:
+
+```bash
 pip install -r requirements.txt
-Run the Training Script:
+```
 
-Copiar código
+### Ejecutar el Script de Entrenamiento:
+
+```bash
 python train_model.py
-Evaluate the Model:
+```
 
-Copiar código
+### Evaluar el Modelo:
+
+```bash
 python predict.py
-Next Steps:
+```
 
-Improve model accuracy through hyperparameter tuning.
-Implement advanced feature engineering techniques.
-Develop a user interface to facilitate real-time churn prediction.
-This summary provides an overview of the improvements and updates made to the project, as well as clear instructions for other developers to replicate the work and contribute.
+## Próximos Pasos:
+
+- Mejorar la precisión del modelo a través del ajuste de hiperparámetros.
+- Implementar técnicas avanzadas de ingeniería de características.
+- Desarrollar una interfaz de usuario para facilitar la predicción de churn en tiempo real.
+
+Para el proceso tener presente lo siguiente: [**Instructivo**](instructivo.md)
+
+Este resumen proporciona una visión general de las mejoras y actualizaciones realizadas al proyecto, así como instrucciones claras para que otros desarrolladores repliquen el trabajo y contribuyan.
 
