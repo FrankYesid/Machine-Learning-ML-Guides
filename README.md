@@ -14,7 +14,7 @@ The main goal of this repository is to provide a centralized reference for vario
 - [**Cluster**](cluster/cluster.md): Clustering and cluster analysis projects.
 - [**Dashboard**](Dashboard/dash.md): Dashboards and data visualization tools.
 - [**Dimensionality Reduction**](Dimensionality_Reduction/reduction.md): Dimensionality reduction techniques.
-- [**Docker**](Docker/docker.md): Docker configuration files.
+- [**Docker**](Docker/README.md): Docker configuration files.
 - [**End-to-End-catboost**](End-to-End-catboost/EndtoEnd.md): Complete End-to-End-catboost machine learning projects.
 - [**Lector OCR**](Lector_OCR/README.md): Projects related to optical character recognition.
 - [**Roadmaps**](Roadmaps/README.md): Roadmaps and study plans for learning machine learning.
