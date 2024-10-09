@@ -1,4 +1,4 @@
-from model import model_pipeline
+from scr.model.model import model_pipeline
 
 from typing import Union
 
