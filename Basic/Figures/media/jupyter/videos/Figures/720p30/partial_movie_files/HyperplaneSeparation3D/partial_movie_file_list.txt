@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/2165139759_4115056151_1884359298.mp4'
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/814481870_4205520711_3113410203.mp4'
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/814481870_3479880233_3135118774.mp4'
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/814481870_3438219438_3535777905.mp4'
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/248640977_1377689631_4011238286.mp4'
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/3684361768_3438219438_3411726422.mp4'
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/3684361768_3753623807_1482999493.mp4'
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/3684361768_4218310350_928320668.mp4'
+file 'file:D:/GitHub/Machine Learning (ML) Guides/Basic/Figures/media/jupyter/videos/Figures/720p30/partial_movie_files/HyperplaneSeparation3D/3684361768_3438219438_2967589050.mp4'
