@@ -13,7 +13,7 @@ Este proyecto es una solución de extremo a extremo (End-to-End) en Python. El p
 - **Evaluación**: Evaluación y validación de los modelos.
 - **Despliegue**: Despliegue del modelo en un entorno de producción.
 
-## Requisitos
+## Requisitos 
 
 Python 3.11.+
 pip (Python package manager)
@@ -38,7 +38,8 @@ Git (Version control tool)
     pip install -r requirements.txt
     ```
 
-## Uso
+## Uso 
+Para ejecutar el proyecto, sigue los siguientes pasos:
 
 1. **Recopilación de datos**:
     ```bash
