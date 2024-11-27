@@ -1,0 +1,9 @@
+
+train: ../database\images/train
+val: ../database\images/val
+
+# Número de clases
+nc: 1
+
+# Nombres de las clases
+names: ['class_name']
