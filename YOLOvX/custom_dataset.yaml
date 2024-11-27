@@ -1,0 +1,5 @@
+
+train: /mnt/data/dataset/images/train
+val: /mnt/data/dataset/images/val
+nc: 2
+names: ['class1', 'class2']
