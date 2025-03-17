@@ -2,7 +2,9 @@ import pandas as pd
 from catboost import CatBoostClassifier
 
 # Load the trained model
-MODEL_PATH = "../../scr/model/catboost_model.cbm" 
+MODEL_PATH = "src/model/catboost_model.cbm" # activar para fast-api.py
+# MODEL_PATH = "../../scr/model/catboost_model.cbm" # activar para streamlit-app.py
+#  
 model = CatBoostClassifier()
 model.load_model(MODEL_PATH)
 

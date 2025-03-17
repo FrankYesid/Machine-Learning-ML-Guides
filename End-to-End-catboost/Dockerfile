@@ -12,4 +12,4 @@ WORKDIR /src
 COPY . .
 
 # Run the application
-CMD ["python", "predict.py"]
+CMD ["python", "src/predict.py"]
