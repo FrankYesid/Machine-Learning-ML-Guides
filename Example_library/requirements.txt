@@ -1,0 +1,36 @@
+# Procesamiento de Documentos
+pdf2image>=1.16.3
+pytesseract>=0.3.10
+ocrmypdf>=14.0.3
+
+# Análisis de Datos
+pandas>=2.0.0
+polars>=0.18.0
+ydata-profiling>=4.5.1
+
+# Excel
+openpyxl>=3.1.2
+calamine>=0.19.1
+
+# Visualización
+plotly>=5.13.1
+drawdata>=0.3.0
+
+# Web y APIs
+fastapi>=0.95.1
+uvicorn>=0.21.1
+python-multipart>=0.0.6
+streamlit>=1.21.0
+
+# MLOps
+mlflow>=2.3.0
+
+# Jupyter y utilidades
+jupyter>=1.0.0
+notebook>=6.5.4
+ipywidgets>=8.0.6
+
+# Dependencias adicionales
+numpy>=1.24.3
+scikit-learn>=1.2.2
+pillow>=9.5.0 
